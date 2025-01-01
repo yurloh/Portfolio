@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            margin: 0;
+            padding: 0;
+            color: #f5f5f5;
+            background-color: #121212;
+        }
+
+        header {
+            position: relative;
+            background-color: #1a1a1a;
+            padding: 1rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .emoji {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .emoji:hover {
+            transform: rotate(20deg) scale(1.2);
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #f5f5f5;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #888;
+        }
+
+        .section {
+            padding: 2rem;
+            margin: 20px;
+            border-radius: 20px;
+            background-color: #181818;
+            color: #f5f5f5;
+            display: none; /* Hide by default */
+        }
+
+        .section h2 {
+            text-align: center;
+            color: #888;
+        }
+
+        .about-content, .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .profile-picture {
+            display: block;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background-image: url('https://i.imgur.com/gbpWsyF.jpeg'); /* Replace with your profile picture URL */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .portfolio-item {
+            background-color: #1f1f1f;
+            padding: 1.5rem;
+            border: 1px solid #333;
+            border-radius: 15px;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            background-color: #2a2a2a;
+        }
+
+        .portfolio-item img {
+            width: 100%; /* Make the image fill the container */
+            height: 200px; /* Set a fixed height */
+            object-fit: cover; /* Ensure the image covers the area */
+            border-radius: 10px; /* Round the corners */
+            margin-bottom: 10px;
+        }
+
+        .portfolio-item a {
+            text-decoration: none;
+            color: #6c63ff;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .portfolio-item a:hover {
+            color: #f5f5f5;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: #f5f5f5;
+            text-align: center;
+            padding: 1rem 0;
+            border-radius: 20px 20px 0 0;
+        }
+    </style>
+    <script>
+        // Function to show and hide sections based on navigation
+        function showSection(section) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(sec => sec.style.display = 'none');
+            
+            // Show the selected section
+            document.getElementById(section).style.display = 'block';
+        }
+    </script>
+</head>
+<body onload="showSection('home')">
+
+    <header>
+        <div class="emoji" title="👾 Alien">👾</div>
+        <h1>My Portfolio</h1>
+        <nav>
+            <a href="javascript:void(0);" onclick="showSection('about')">About</a>
+            <a href="javascript:void(0);" onclick="showSection('portfolio')">Portfolio</a>
+            <a href="javascript:void(0);" onclick="showSection('contact')">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="section" id="home">
+        <h2>Welcome to My Portfolio</h2>
+        <p>Click on the navigation links above to learn more about me, see my work, or get in touch!</p>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about" style="display: none;">
+        <h2>About Me</h2>
+        <div class="profile-picture"></div>
+        <div class="about-content">
+            <p>Hello! I am Lohitaksh Karnatakapu, I am in 8th grade, and I specialize in creating Web Applications, 2D & 3D games, Python, Artificial Intelligence, and machine learning.</p>
+            <p>I work with technologies like <strong>Python, HTML, CSS, JS, Go, Unity, C#, </strong>, and <strong>C++</strong>. My goal is to make cool apps and games.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section" id="portfolio" style="display: none;">
+        <h2>My Projects</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://i.imgur.com/P7EjQe1.png" alt="Project 1">
+                <h3>zChat</h3>
+                <p>zChat - A new revolutionary chat app! Hand crafted using HTML CSS and JS, uses FireBase for storing the messages.</p>
+                <a href="https://yurloh.github.io/zChat/" target="_blank">Visit Project</a>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>A brief description of your project. Add links if needed!</p>
+                <a href="https://example.com" target="_blank">Visit Project</a>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/300x200" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>A brief description of your project. Add links if needed!</p>
+                <a href="https://example.com" target="_blank">Visit Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact" style="display: none;">
+        <h2>Contact Details</h2>
+        <div class="contact-content">
+            <p>If you'd like to get in touch, feel free to contact me via the following:</p>
+            <p><strong>Email:</strong> quantamzero@gmail.com</p>
+            <p><strong>Phone:</strong> 214-846-3242</p>
+            <p><strong>Location:</strong> Dallas, United States</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Lohitaksh Karnatakapu. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
